@@ -10,23 +10,21 @@
         //     var categoria = event.target.innerText.toLowerCase();
         //     var añadir = prompt("Introduce un elemento para " + categoria);
         //     if (añadir) {
+        //         console.log(añadir)
         //         var texto = document.createTextNode(añadir);
         //         var elemento = document.createElement("li");
         //         elemento.appendChild(texto);
         //         var lista = document.getElementById(categoria);
+        //         console.log(lista)
+        //         console.log(categoria)
         //         lista.appendChild(elemento);
         //     }
         // }
 
         function añadirElementos() {
-            var encabezados = document.getElementsByTagName("h3");
-            var producto = prompt("Introduce un producto");
-            for (let i = 0; i < encabezados.length; i++) {
-                var texto = document[i].createTextNode(producto);
-                var elemento = document[i].createElement("li");
-                elemento.appendChild(texto);
-                encabezados[i].appendChild(elemento);
-            }
+            let newProduct = document.createElement("li");
+            newProduct.innerHTML = prompt("Añade un producto")
+            this.nextElementSibling.appendChild(newProduct);
             
         }
 
@@ -34,7 +32,7 @@
             var contenido = prompt("Que elemento quieres borrar¿?");
             var elementos = document.getElementsByTagName("li");
             for (let i = 0; i < elementos.length; i++) {
-                if (contenido.innerHTML === elementos[i].innerHTML) {
+                if (elementos[i].innerHTML === contenido) {
                     elementos[i].style.textDecoration = "line-through";
                 }
             }
@@ -52,7 +50,7 @@
 
 <body>
     <h1>Mi lista</h1>
-    <h3>Alimentación</h3>
+    <h3>Alimentacion</h3>
     <ol id="alimentacion"></ol>
     <h3>Hogar</h3>
     <ol id="hogar"></ol>
