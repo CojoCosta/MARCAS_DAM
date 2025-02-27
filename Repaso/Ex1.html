@@ -6,54 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        // function añadirElementos() {
+        //     var categoria = event.target.innerText.toLowerCase();
+        //     var añadir = prompt("Introduce un elemento para " + categoria);
+        //     if (añadir) {
+        //         var texto = document.createTextNode(añadir);
+        //         var elemento = document.createElement("li");
+        //         elemento.appendChild(texto);
+        //         var lista = document.getElementById(categoria);
+        //         lista.appendChild(elemento);
+        //     }
+        // }
+
         function añadirElementos() {
-            var encabezado1 = document.getElementById("encabezado1");
-            var encabezado2 = document.getElementById("encabezado2");
-            var encabezado3 = document.getElementById("encabezado3");
-            var prompt = prompt("Introduce un elemento");
-            var lista = document.createElement("li").innerHTML = prompt;
-            if (this == encabezado1) {
-                document.getElementsByTagName("ol")[0].appendChild(lista);
-            } else if (this == encabezado2) {
-                document.getElementsByTagName("ol")[1].appendChild(lista);
-            } else if (this == encabezado3) {
-                document.getElementsByTagName("ol")[2].appendChild(lista);
+            var encabezados = document.getElementsByTagName("h3");
+            var producto = prompt("Introduce un producto");
+            for (let i = 0; i < encabezados.length; i++) {
+                var texto = document[i].createTextNode(producto);
+                var elemento = document[i].createElement("li");
+                elemento.appendChild(texto);
+                encabezados[i].appendChild(elemento);
             }
+            
         }
 
-        function borrar(){
-            var prompt = prompt ("Que elemento quieres borrar¿?");
+        function borrar() {
+            var contenido = prompt("Que elemento quieres borrar¿?");
             var elementos = document.getElementsByTagName("li");
             for (let i = 0; i < elementos.length; i++) {
-                if (prompt.innerHTML === elementos[i].innerHTML){
+                if (contenido.innerHTML === elementos[i].innerHTML) {
                     elementos[i].style.textDecoration = "line-through";
                 }
             }
         }
-            
-        window.onload = function(){
+
+        window.onload = function () {
             var encabezados = document.getElementsByTagName("h3");
             for (let i = 0; i < encabezados.length; i++) {
                 encabezados[i].onclick = añadirElementos;
             }
-            var boton = document.getElementById("pabloGay");
+            var boton = document.getElementById("borrar");
             boton.onclick = borrar;
         }
     </script>
 
 <body>
-    <h3 id="encabezado1">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa</h3>
-    <ol>
+    <h1>Mi lista</h1>
+    <h3>Alimentación</h3>
+    <ol id="alimentacion"></ol>
+    <h3>Hogar</h3>
+    <ol id="hogar"></ol>
+    <h3>Higiene</h3>
+    <ol id="higiene"></ol>
 
-    </ol>
-    <h3 id="encabezado2">BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBb</h3>
-    <ol>
-
-    </ol>
-    <h3 id="encabezado3">CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc</h3>
-    <ol>
-
-    </ol>
-    <button id="pabloGay">Borrar Pablo gay</button>
+    <button id="borrar">Tachar elemento</button>
 </body>
+
 </html>
