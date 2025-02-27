@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function colores(evento){
+            let body = document.body;
+            var info = document.getElementById("info");
+            if (evento.clientX < window.innerWidth / 2 && evento.clientY < window.innerHeight / 2){
+                body.style.backgroundColor ="red";
+                info.innerHTML = "Superior izquierda";
+            }  
+            else if (evento.clientX > window.innerWidth / 2 && evento.clientY < window.innerHeight / 2){
+                body.style.backgroundColor ="yellow";
+                info.innerHTML = "Superior derecha";
+            } 
+            else if (evento.clientX < window.innerWidth / 2 && evento.clientY > window.innerHeight / 2){
+                body.style.backgroundColor ="green";
+                info.innerHTML = "Inferior izquierda";
+            } 
+            else {
+                body.style.backgroundColor ="blue";
+                info.innerHTML = "Inferior derecha";
+            } 
+        }
+        window.onload = function(){
+            document.onmousemove = colores;
+        }
+    </script>
+</head>
+<body>
+    <h1 id="info">MOVE THE MOUSE</h1>
+</body>
+</html>
