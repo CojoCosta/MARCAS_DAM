@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+        <script>
+            window.onload = function(){
+                var boton = document.querySelector("[type=\"button\"]");
+                boton.onclick=mostrar;
+            }
+            function mostrar(){
+                //uso de arrays forms y elements
+                var info = document.getElementById("info");
+                info.innerHTML = "";
+                var formulario = document.forms[0];
+                var elementos = formulario.elements;
+                for (let i = 0; i < elementos.length; i++) {
+                    if(elementos[i].type == "button"){
+                        continue;
+                    } else{
+                        info.innerHTML = info.innerHTML + elementos[i].value + "<br>";
+                    }
+                }
+            }
+        </script>
+</head>
+<body>
+    <form action="#" method="post">
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre"><br>
+        <input type="text" name="apellido" id="apellido" placeholder="Apellidos"><br>
+        <input type="number" name="edad" id="edad" placeholder="Edad"><br>
+        <input type="email" name="email" id="email" placeholder="Email"><br>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña"><br><br>
+        <input type="button" value="Send">
+    </form>
+    <hr>
+    <div id="info">
+        
+    </div>
+</body>
+</html>

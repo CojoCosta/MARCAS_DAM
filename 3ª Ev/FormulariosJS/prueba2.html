@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 2</title>
+    <style>
+        textarea{
+            resize: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var boton=document.querySelector("[type=\"button\"]");
+            boton.onclick=mostrar;
+        }
+
+        function mostrar(){
+            var generov ="";
+            var info=document.getElementById("info");
+            info.innerHTML="";
+            var nombre = document.getElementsByName("nombre")[0].value;
+            info.innerHTML = info.innerHTML + nombre + "<br>";
+            var apellidos = document.getElementsByName("apellidos")[0].value;
+            info.innerHTML = info.innerHTML + apellidos + "<br>";
+            var edad = document.getElementsByName("edad")[0].value;
+            info.innerHTML = info.innerHTML + edad + "<br>";
+            var correo = document.getElementsByName("correo")[0].value;
+            info.innerHTML = info.innerHTML + edad + "<br>";
+            var contraseña = document.getElementsByName("contraseña")[0].value;
+            info.innerHTML = info.innerHTML + contraseña + "<br>";
+            var genero = document.getElementsByName("genero");
+            for (let i = 0; i < genero.length; i++) {
+                if(genero[i].checked){
+                    generov = genero[i].value;
+                }
+            }
+            info.innerHTML = info.innerHTML + "<strong>Gender:</strong>" + "<br>"
+            info.innerHTML = info.innerHTML + generov + "<br>";
+        }
+    </script>
+</head>
+<body>
+    <form action="#" method="post">
+        <input type="text" name="nombre" id="nombre" placeholder="Name"><br>
+        <input type="text" name="apellidos" id="apellidos" placeholder="Surnames"><br>
+        <input type="number" name="edad" id="edad" placeholder="Age"><br>
+        <input type="email" name="correo" id="correo" placeholder="Email"><br>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Password">
+        <hr>
+        <span><strong>Gender:</strong></span><br>
+        Hombre: <input type="radio" name="genero" id="hombre" value="Hombre">
+        Mujer: <input type="radio" name="genero" id="mujer" value="Mujer">
+        <hr>
+        <span><strong>Hobbies:</strong></span><br>
+        Leer: <input type="checkbox" name="hobbies[]" id="leer" value="leer"><br>
+        Cine: <input type="checkbox" name="hobbies[]" id="cine" value="cine"><br>
+        Dibujar: <input type="checkbox" name="hobbies[]" id="dibujar" value="dibujar"><br>
+        Musica: <input type="checkbox" name="hobbies[]" id="musica" value="musica"><br>
+        Videojuegos: <input type="checkbox" name="hobbies[]" id="videojuegos" value="videojuegos"><br>
+        <hr>
+        <span><strong>Idioma</strong></span><br>
+        <select name="idioma" id="idioma">
+            <option value="ingles">Inglés</option>
+            <option value="español">Español</option>
+            <option value="italiano">Italiano</option>
+            <option value="frances">Francés</option>
+            <option value="aleman">Alemán</option>
+        </select>
+        <hr>
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Escriba sus comentarios"></textarea>
+        <br>
+        <input type="button" value="Send">
+    </form>
+    <hr>
+    <h3>Datos del usuario</h3>
+    <div id="info"></div>
+</body>
+</html>
