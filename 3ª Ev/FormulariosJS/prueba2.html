@@ -1,79 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario 2</title>
-    <style>
-        textarea{
-            resize: none;
-        }
-    </style>
-    <script>
-        window.onload=function(){
-            var boton=document.querySelector("[type=\"button\"]");
-            boton.onclick=mostrar;
-        }
-
-        function mostrar(){
-            var generov ="";
-            var info=document.getElementById("info");
-            info.innerHTML="";
-            var nombre = document.getElementsByName("nombre")[0].value;
-            info.innerHTML = info.innerHTML + nombre + "<br>";
-            var apellidos = document.getElementsByName("apellidos")[0].value;
-            info.innerHTML = info.innerHTML + apellidos + "<br>";
-            var edad = document.getElementsByName("edad")[0].value;
-            info.innerHTML = info.innerHTML + edad + "<br>";
-            var correo = document.getElementsByName("correo")[0].value;
-            info.innerHTML = info.innerHTML + edad + "<br>";
-            var contraseña = document.getElementsByName("contraseña")[0].value;
-            info.innerHTML = info.innerHTML + contraseña + "<br>";
-            var genero = document.getElementsByName("genero");
-            for (let i = 0; i < genero.length; i++) {
-                if(genero[i].checked){
-                    generov = genero[i].value;
-                }
-            }
-            info.innerHTML = info.innerHTML + "<strong>Gender:</strong>" + "<br>"
-            info.innerHTML = info.innerHTML + generov + "<br>";
-        }
-    </script>
+    <title>Document</title>
 </head>
+<style>
+    textarea {
+        resize: none;
+    }
+</style>
+<script>
+    function mostrar() {
+        var generov = "";
+        var info = document.getElementById("info");
+        info.innerHTML = "";
+        var nombre = document.getElementsByName("nombre")[0].value;
+        info.innerHTML = info.innerHTML + nombre + "<br>";
+        var apellidos = document.getElementsByName("apellidos")[0].value;
+        info.innerHTML = info.innerHTML + apellidos + "<br>";
+        var edad = document.getElementsByName("edad")[0].value;
+        info.innerHTML = info.innerHTML + edad + "<br>";
+        var correo = document.getElementsByName("correo")[0].value;
+        info.innerHTML = info.innerHTML + correo + "<br>";
+        var pass = document.getElementsByName("pass")[0].value;
+        info.innerHTML = info.innerHTML + pass + "<br>";
+        //Radio
+        var genero = document.getElementsByName("genero");
+        for (var i = 0; i < genero.length; i++) {
+            if (genero[i].checked) {
+                generov = genero[i].value;
+            }
+        }
+        info.innerHTML = info.innerHTML + "<strong>Gender:</strong>" + "<br>";
+        info.innerHTML = info.innerHTML + generov + "<br>";
+        //Checkbox
+        var hobbies = document.getElementsByName("hobbies[]");
+        info.innerHTML = info.innerHTML + "<strong>Hobbies:</strong>" + "<br>";
+        for (var i = 0; i < hobbies.length; i++){
+            if (hobbies[i].checked){
+                info.innerHTML = info.innerHTML + hobbies[i].value+"<br>";
+            }
+        }
+        //Select
+        info.innerHTML=info.innerHTML+"<strong>Language choosen:</strong>"+"<br>";
+        var idiomas = document.getElementsByName("language")[0];
+        var idioma = idiomas.options[idiomas.selectedIndex].value;
+        info.innerHTML = info.innerHTML + idioma + "<br>";
+        //Comentarios
+        var comentarios = document.getElementsByName("comentarios");
+        info.innerHTML=info.innerHTML+"<strong>Your Comments:</strong>"+"<br>";
+        info.innerHTML = info.innerHTML + comentarios;
+    }
+    window.onload = function () {
+        var boton = document.querySelector("[type=\"button\"]");
+        boton.onclick = mostrar;
+    }
+</script>
+</head>
+
 <body>
     <form action="#" method="post">
         <input type="text" name="nombre" id="nombre" placeholder="Name"><br>
         <input type="text" name="apellidos" id="apellidos" placeholder="Surnames"><br>
         <input type="number" name="edad" id="edad" placeholder="Age"><br>
         <input type="email" name="correo" id="correo" placeholder="Email"><br>
-        <input type="password" name="contraseña" id="contraseña" placeholder="Password">
+        <input type="password" name="pass" id="pass" placeholder="Password"><br>
         <hr>
         <span><strong>Gender:</strong></span><br>
-        Hombre: <input type="radio" name="genero" id="hombre" value="Hombre">
-        Mujer: <input type="radio" name="genero" id="mujer" value="Mujer">
+        Man: <input type="radio" name="genero" id="hombre" value="Man">
+        Woman: <input type="radio" name="genero" id="mujer" value="Woman">
+        <br>
         <hr>
         <span><strong>Hobbies:</strong></span><br>
-        Leer: <input type="checkbox" name="hobbies[]" id="leer" value="leer"><br>
-        Cine: <input type="checkbox" name="hobbies[]" id="cine" value="cine"><br>
-        Dibujar: <input type="checkbox" name="hobbies[]" id="dibujar" value="dibujar"><br>
-        Musica: <input type="checkbox" name="hobbies[]" id="musica" value="musica"><br>
-        Videojuegos: <input type="checkbox" name="hobbies[]" id="videojuegos" value="videojuegos"><br>
+        Reading: <input type="checkbox" name="hobbies[]" id="Reading" value="Reading"><br>
+        Cinema: <input type="checkbox" name="hobbies[]" id="Cinema" value="Cinema"><br>
+        Drawing: <input type="checkbox" name="hobbies[]" id="Drawing" value="Drawing"><br>
         <hr>
-        <span><strong>Idioma</strong></span><br>
-        <select name="idioma" id="idioma">
-            <option value="ingles">Inglés</option>
-            <option value="español">Español</option>
-            <option value="italiano">Italiano</option>
-            <option value="frances">Francés</option>
-            <option value="aleman">Alemán</option>
+        <span><strong>Choose a language:</strong></span>
+        <select name="language" id="language">
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Italian">Italian</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
         </select>
-        <hr>
-        <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Escriba sus comentarios"></textarea>
         <br>
-        <input type="button" value="Send">
+        <hr>
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Escriba sus comentarios aquí">
+        </textarea>
+        <br>
+        <input type="button" value="Send"><br>
     </form>
     <hr>
-    <h3>Datos del usuario</h3>
+    <h3>User registration data</h3>
     <div id="info"></div>
 </body>
+
 </html>
