@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+}
+header{
+    width: 100%;
+    height: 15%;
+    background-color: black;
+    color: white;
+}
+.materia{
+    width: 50%;
+    height: 70%;
+    background-color: grey;
+}
+.eleccion{
+    width: 100%;
+    height: 30%;
+}
+.calculo{
+    width: 100%;
+    height: 70%;
+}

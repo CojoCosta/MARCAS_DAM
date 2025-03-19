@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Areas</title>
+    <link rel="stylesheet" href="volumenes.css">
 </head>
 <body>
+    <header>
+        <h2>Calculador de volúmenes</h2>
+    </header>
     <form action="#" method="post">
-        <div class="figuras">
-            <select name="opciones" id="opciones">
+        <div class="materia">
+            <div class="eleccion">
+                <span><strong>Choose a figure: </strong></span>
+                <select name="opciones" id="opciones">
+                <option value="None">---------</option>
                 <option value="Cylinder">Cylinder</option>
                 <option value="Cube">Cube</option>
                 <option value="Cone">Cone</option>
@@ -16,6 +23,10 @@
                 <option value="Square pyramid">Square pyramid</option>
                 <option value="Rectangular Prism">Rectangular Prism</option>
             </select>
+        </div>
+        <div class="calculo">
+            <button>Calcular volúmmen</button>
+        </div>
         </div>
     </form>
     <script src="calculos.js"></script>
