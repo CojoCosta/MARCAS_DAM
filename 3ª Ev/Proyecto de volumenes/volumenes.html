@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Areas</title>
+    <title>Cálculo de Volumen</title>
     <link rel="stylesheet" href="volumenes.css">
 </head>
+
 <body>
     <header>
-        <h2>Calculador de volúmenes</h2>
+        <h2>Volume Calculator</h2>
     </header>
-    <form action="#" method="post">
-        <div class="materia">
-            <div class="eleccion">
-                <span><strong>Choose a figure: </strong></span>
-                <select name="opciones" id="opciones">
-                <option value="None">---------</option>
-                <option value="Cylinder">Cylinder</option>
-                <option value="Cube">Cube</option>
-                <option value="Cone">Cone</option>
-                <option value="Sphere">Sphere</option>
-                <option value="Square pyramid">Square pyramid</option>
-                <option value="Rectangular Prism">Rectangular Prism</option>
+    
+    <div class="container">
+        <div class="formulario">
+            <label for="figura">Select a figure:</label>
+            <select id="figura" onchange="mostrarCampos()">
+                <option value="-----">-----</option>
+                <option value="cubo">Cube</option>
+                <option value="esfera">Sphere</option>
+                <option value="cono">Cone</option>
+                <option value="cilindro">Cylinder</option>
+                <option value="prisma">Rectangular Prism</option>
+                <option value="piramide">Square Pyramid</option>
             </select>
+
+            <div id="campos"></div>
+
+            <label for="unidad">Select a unit:</label>
+            <select id="unidad">
+                <option value="m">Meters</option>
+                <option value="dm">Decimeters</option>
+                <option value="cm">Centimeters</option>
+                <option value="mm">Milimeters</option>
+            </select>
+
+            <button onclick="calcularVolumen()">Calculate</button>
+            <h3 id="resultado"></h3>
         </div>
-        <div class="calculo">
-            <button>Calcular volúmmen</button>
+        <div id="imagen-container">
+            <img id="imagen-figura" src="" alt="Figure">
         </div>
-        </div>
-    </form>
+    </div>
+    <footer>
+        <h2>Created by Diego Costa</h2>
+    </footer>
     <script src="calculos.js"></script>
 </body>
 </html>
