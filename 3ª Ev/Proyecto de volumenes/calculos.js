@@ -7,32 +7,32 @@ function mostrarCampos() {
 
     switch (figura) {
         case "cubo":
-            html = '<div class="input-container">Lado: <input type="number" id="lado"></div>';
+            html = '<div class="input-container">Side: <input type="number" id="lado"></div>';
             imagen.src = "figcubo.png";
             break;
         case "esfera":
-            html = '<div class="input-container">Radio: <input type="number" id="radio"></div>';
+            html = '<div class="input-container">Radius: <input type="number" id="radio"></div>';
             imagen.src = "figesfera.png";
             break;
         case "cono":
-            html = '<div class="input-container">Radio: <input type="number" id="radio"></div>' +
-                '<div class="input-container">Altura: <input type="number" id="altura"></div>';
+            html = '<div class="input-container">Radius: <input type="number" id="radio"></div>' +
+                '<div class="input-container">Height: <input type="number" id="altura"></div>';
             imagen.src = "figcono.png";
             break;
         case "cilindro":
-            html = '<div class="input-container">Radio: <input type="number" id="radio"></div>' +
-                '<div class="input-container">Altura: <input type="number" id="altura"></div>';
+            html = '<div class="input-container">Radius: <input type="number" id="radio"></div>' +
+                '<div class="input-container">Height: <input type="number" id="altura"></div>';
             imagen.src = "figcilindro.png";
             break;
         case "prisma":
-            html = '<div class="input-container">Largo: <input type="number" id="largo"></div>' +
-                '<div class="input-container">Ancho: <input type="number" id="ancho"></div>' +
-                '<div class="input-container">Altura: <input type="number" id="altura"></div>';
+            html = '<div class="input-container">Large: <input type="number" id="largo"></div>' +
+                '<div class="input-container">Broad: <input type="number" id="ancho"></div>' +
+                '<div class="input-container">Height: <input type="number" id="altura"></div>';
             imagen.src = "figprismaRectangular.png";
             break;
         case "piramide":
-            html = '<div class="input-container">Lado de la Base: <input type="number" id="ladoBase"></div>' +
-                '<div class="input-container">Altura: <input type="number" id="altura"></div>';
+            html = '<div class="input-container">Base side: <input type="number" id="ladoBase"></div>' +
+                '<div class="input-container">Height: <input type="number" id="altura"></div>';
             imagen.src = "figpiramide.png";
             break;
     }
