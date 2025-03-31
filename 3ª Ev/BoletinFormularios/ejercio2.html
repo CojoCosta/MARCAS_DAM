@@ -4,13 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejercicio 1</title>
+    <title>ejercicio 2</title>
     <script>
-        
+        window.onload = function () {
+            var boton = document.querySelector("[type=\"button\"]");
+            boton.onclick = mostrar;
+        }
+        function mostrar() {
+            var info = document.getElementById("info");
+            info.innerHTML = "";
+            var mensaje = document.getElementsByName("comentarios")[0].value;
+            info.innerHTML += "Mensaje: " + mensaje + "<br>";
+            var nombre = document.getElementsByName("nombre")[0].value;
+            info.innerHTML += "Nombre: " + nombre + "<br>";
+            var tlf = document.getElementsByName("telefono")[0].value;
+            info.innerHTML += "Teléfono: " + tlf + "<br>";
+            var email = document.getElementsByName("email")[0].value;
+            info.innerHTML += "Email: " + email + "<br>";
+            var  fecha = Date().toString();
+            info.innerHTML += "Fecha: " + fecha
+        }
     </script>
 </head>
 
 <body>
+    <p>Rellena el siguiente formulario</p>
     <form action="#" method="post">
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" id="nombre" placeholder="Nombre"><br>
@@ -18,10 +36,12 @@
         <input type="email" name="email" id="email" placeholder="Email"><br>
         <label for="telefono">Numero: </label>
         <input type="number" name="telefono" id="telefono" placeholder="Telefono"><br>
+        <label for="comentarios">Mensaje: </label>
         <textarea name="comentarios" id="comentarios" cols="30" rows="10"
             placeholder="Escriba aquí su mensaje"></textarea><br>
-        <button type="submit">Enviar Datos</button>
+        <button type="button">Enviar Datos</button>
     </form>
+    <div id="info"></div>
 </body>
 
 </html>
