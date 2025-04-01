@@ -10,48 +10,131 @@
     textarea {
         resize: none;
     }
+
+    .rojo {
+        color: red;
+    }
 </style>
 <script>
     function mostrar() {
         var generov = "";
+        var checkGenero = 0;
+        var checkHobbies = 0;
+        var flagError = true;
         var info = document.getElementById("info");
+        var errorNombre = document.getElementById("errorNombre");
+        var errorApellidos = document.getElementById("errorApellidos");
+        var errorEdad = document.getElementById("errorEdad");
+        var errorEmail = document.getElementById("errorEmail");
+        var errorPass = document.getElementById("errorPass");
+        var errorGenero = document.getElementById("errorGenero");
+        var errorHobbies = document.getElementById("errorHobbies");
+        var errorIdioma = document.getElementById("errorIdioma");
+        var errorComentarios = document.getElementById("errorComentarios");
+
+
         info.innerHTML = "";
         var nombre = document.getElementsByName("nombre")[0].value;
-        info.innerHTML = info.innerHTML + nombre + "<br>";
+        if (nombre == "") {
+            errorNombre.innerHTML = "Field name is required" + "<br>";
+            flagError = false;
+        } else {
+            errorNombre.innerHTML = "";
+        }
         var apellidos = document.getElementsByName("apellidos")[0].value;
-        info.innerHTML = info.innerHTML + apellidos + "<br>";
+        if (apellidos == "") {
+            errorApellidos.innerHTML = "Field surname is required" + "<br>";
+            flagError = false;
+        } else {
+            errorApellidos.innerHTML = "";
+        }
         var edad = document.getElementsByName("edad")[0].value;
-        info.innerHTML = info.innerHTML + edad + "<br>";
+        if (edad == "") {
+            errorEdad.innerHTML = "Field age is required" + "<br>";
+            flagError = false;
+        } else {
+            errorEdad.innerHTML = "";
+        }
         var correo = document.getElementsByName("correo")[0].value;
-        info.innerHTML = info.innerHTML + correo + "<br>";
+        if (correo == "") {
+            errorEmail.innerHTML = "Field email is required" + "<br>";
+            flagError = false;
+        } else {
+            errorEdad.innerHTML = "";
+        }
         var pass = document.getElementsByName("pass")[0].value;
-        info.innerHTML = info.innerHTML + pass + "<br>";
+        if (pass == "") {
+            errorPass.innerHTML = "Field password is required" + "<br>";
+            flagError = false;
+        } else {
+            errorPass.innerHTML = "";
+        }
         //Radio
         var genero = document.getElementsByName("genero");
         for (var i = 0; i < genero.length; i++) {
             if (genero[i].checked) {
                 generov = genero[i].value;
+            } else {
+                checkGenero++;
             }
         }
-        info.innerHTML = info.innerHTML + "<strong>Gender:</strong>" + "<br>";
-        info.innerHTML = info.innerHTML + generov + "<br>";
+        if (checkGenero == genero.length) {
+            errorGenero.innerHTML = "Field genre is required";
+            flagError = false;
+        } else {
+            errorGenero.innerHTML = "";
+        }
+
         //Checkbox
         var hobbies = document.getElementsByName("hobbies[]");
-        info.innerHTML = info.innerHTML + "<strong>Hobbies:</strong>" + "<br>";
-        for (var i = 0; i < hobbies.length; i++){
-            if (hobbies[i].checked){
-                info.innerHTML = info.innerHTML + hobbies[i].value+"<br>";
+        for (var i = 0; i < hobbies.length; i++) {
+            if (!hobbies[i].checked) {
+                checkHobbies++;
             }
         }
+        if (checkHobbies == hobbies.length) {
+            errorHobbies.innerHTML = "Field hobbies is required";
+            flagError = false;
+        } else {
+            errorHobbies.innerHTML = "";
+        }
         //Select
-        info.innerHTML=info.innerHTML+"<strong>Language choosen:</strong>"+"<br>";
         var idiomas = document.getElementsByName("language")[0];
         var idioma = idiomas.options[idiomas.selectedIndex].value;
-        info.innerHTML = info.innerHTML + idioma + "<br>";
+        if (idioma == "") {
+            errorIdioma.innerHTML = "You must select a language";
+            flagError = false;
+        } else {
+            errorIdioma.innerHTML = "";
+        }
         //Comentarios
         var comentarios = document.getElementsByName("comentarios");
-        info.innerHTML=info.innerHTML+"<strong>Your Comments:</strong>"+"<br>";
-        info.innerHTML = info.innerHTML + comentarios;
+        if (comentarios == "") {
+            errorComentarios.innerHTML = "Write your comments please";
+            flagError = false;
+        } else {
+            errorComentarios.innerHTML = "";
+        }
+
+        if (flagError) {
+            info.innerHTML += nombre + "<br>";
+            info.innerHTML += apellidos + "<br>";
+            info.innerHTML += edad + "<br>";
+            info.innerHTML += correo + "<br>";
+            info.innerHTML += pass + "<br>";
+            info.innerHTML += "<strong>Gender:</strong>" + "<br>";
+            info.innerHTML += generov + "<br>";
+            info.innerHTML += "<strong>Hobbies:</strong>" + "<br>";
+            info.innerHTML += "<strong>Language choosen:</strong>" + "<br>";
+            info.innerHTML += idioma + "<br>";
+            info.innerHTML += "<strong>Your Comments:</strong>" + "<br>";
+            info.innerHTML += comentarios;
+            for (var i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked) {
+                    info.innerHTML += hobbies[i].value + "<br>";
+                }
+            }
+        }
     }
     window.onload = function () {
         var boton = document.querySelector("[type=\"button\"]");
@@ -63,23 +146,32 @@
 <body>
     <form action="#" method="post">
         <input type="text" name="nombre" id="nombre" placeholder="Name"><br>
+        <span id="errorNombre" class="rojo"></span>
         <input type="text" name="apellidos" id="apellidos" placeholder="Surnames"><br>
+        <span id="errorApellidos" class="rojo"></span>
         <input type="number" name="edad" id="edad" placeholder="Age"><br>
+        <span id="errorEdad" class="rojo"></span>
         <input type="email" name="correo" id="correo" placeholder="Email"><br>
+        <span id="errorEmail" class="rojo"></span>
         <input type="password" name="pass" id="pass" placeholder="Password"><br>
+        <span id="errorPass" class="rojo"></span>
         <hr>
         <span><strong>Gender:</strong></span><br>
         Man: <input type="radio" name="genero" id="hombre" value="Man">
         Woman: <input type="radio" name="genero" id="mujer" value="Woman">
         <br>
+        <span id="errorGenero" class="rojo"></span>
+
         <hr>
         <span><strong>Hobbies:</strong></span><br>
         Reading: <input type="checkbox" name="hobbies[]" id="Reading" value="Reading"><br>
         Cinema: <input type="checkbox" name="hobbies[]" id="Cinema" value="Cinema"><br>
         Drawing: <input type="checkbox" name="hobbies[]" id="Drawing" value="Drawing"><br>
+        <span id="errorHobbies" class="rojo"></span>
         <hr>
         <span><strong>Choose a language:</strong></span>
         <select name="language" id="language">
+            <option value="">------</option>
             <option value="English">English</option>
             <option value="Spanish">Spanish</option>
             <option value="Italian">Italian</option>
@@ -87,10 +179,12 @@
             <option value="German">German</option>
         </select>
         <br>
+        <span id="errorIdioma" class="rojo"></span>
         <hr>
         <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Escriba sus comentarios aquí">
         </textarea>
         <br>
+        <span id="errorComentarios" class="rojo"></span>
         <input type="button" value="Send"><br>
     </form>
     <hr>
