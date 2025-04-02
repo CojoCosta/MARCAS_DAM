@@ -16,6 +16,24 @@
     }
 </style>
 <script>
+    function validarCampo(valor) {
+        var expresionRegular = /^\s+$/;
+        return expresionRegular.test(valor);
+        //true: si encuentar espacios en blanco
+        //false: si no encuentra espacios
+    }
+    function validarContraseña(valor) {
+        var expresionRegular = /^[0-9a-zA-Z]{6}$/;
+        return expresionRegular.test(valor);
+        //true: si cumple los parametros
+        //false: si no cumple los parámetros
+
+    }
+    function validarEmail(valor) {
+        var expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return expresionRegular.test(valor);
+    }
+
     function mostrar() {
         var generov = "";
         var checkGenero = 0;
@@ -32,17 +50,16 @@
         var errorIdioma = document.getElementById("errorIdioma");
         var errorComentarios = document.getElementById("errorComentarios");
 
-
         info.innerHTML = "";
         var nombre = document.getElementsByName("nombre")[0].value;
-        if (nombre == "") {
+        if (nombre == "" || validarCampo(nombre)) {
             errorNombre.innerHTML = "Field name is required" + "<br>";
             flagError = false;
         } else {
             errorNombre.innerHTML = "";
         }
         var apellidos = document.getElementsByName("apellidos")[0].value;
-        if (apellidos == "") {
+        if (apellidos == "" || validarCampo(apellidos)) {
             errorApellidos.innerHTML = "Field surname is required" + "<br>";
             flagError = false;
         } else {
@@ -59,12 +76,18 @@
         if (correo == "") {
             errorEmail.innerHTML = "Field email is required" + "<br>";
             flagError = false;
+        } else if (!validarEmail(correo)) {
+            errorEdad.innerHTML = "The Email must be valid";
+            flagError = false;
         } else {
             errorEdad.innerHTML = "";
         }
         var pass = document.getElementsByName("pass")[0].value;
         if (pass == "") {
             errorPass.innerHTML = "Field password is required" + "<br>";
+            flagError = false;
+        } else if (!validarContraseña(pass)) {
+            errorPass.innerHTML = "The password is not valid: it must be only 6 alphanumeric";
             flagError = false;
         } else {
             errorPass.innerHTML = "";
