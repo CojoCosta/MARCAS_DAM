@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion using API javascript</title>
+    <style>
+        input:valid {
+            color: green;
+        }
+
+        input:invalid {
+            color: red;
+        }
+
+        input:focus {
+            background-color: azure;
+        }
+
+        .rojo {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post" onsubmit="return validar();">
+        <label for="nombre">Name: </label>
+        <input type="text" name="nombre" id="nombre" minlength="4"><br>
+        <span id="errorNombre" class="rojo"></span><br>
+
+        <label for="apellidos">Surnames: </label>
+        <input type="text" name="apellidos" id="apellidos" minlength="8"><br>
+        <span id="errorApellidos" class="rojo"></span><br>
+
+        <label for="edad">Age: </label>
+        <input type="number" name="edad" id="edad" min="18"><br>
+        <span id="errorEdad" class="rojo"></span><br>
+
+        <label for="correo">Email: </label>
+        <input type="email" name="correo" id="correo"><br>
+        <span id="errorCorreo" class="rojo"></span><br>
+
+        <label for="dni">DNI: </label>
+        <input type="text" name="dnin" id="dni" pattern="[0-9]+{8}[A-Z]{1}"><br>
+        <span id="errorDNI" class="rojo"></span><br>
+
+        <input type="submit" value="Send">
+
+
+    </form>
+    <script>
+        function validarEmail(correo) {
+            var expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return expresionRegular.test(correo);
+        }
+        function validar() {
+            var errorNombre = document.getElementById("errorNombre");
+            var errorApellidos = document.getElementById("errorApellidos");
+            var errorEdad = document.getElementById("errorEdad");
+            var errorCorreo = document.getElementById("errorCorreo");
+            var errorDNI = document.getElementById("errorDNI");
+
+            var nombre = document.getElementsByName("nombre")[0];
+            var apellidos = document.getElementsByName("apellidos")[0];
+            var edad = document.getElementsByName("edad")[0];
+            var correo = document.getElementsByName("correo")[0];
+            var dni = document.getElementsByName("dnin")[0];
+            if (nombre.value == "") {
+                errorNombre.innerHTML = "This field name is required";
+                return false;
+            } else {
+                errorNombre.innerHTML = "";
+            }
+
+            if (apellidos.value == "") {
+                errorApellidos.innerHTML = "This field surnames are required";
+                return false;
+            } else {
+                errorApellidos.innerHTML = "";
+            }
+
+            if (edad.value == "") {
+                errorEdad.innerHTML = "This field age is required";
+                return false;
+            } else {
+                errorEdad.innerHTML = "";
+            }
+
+            if (correo.value == "") {
+                errorCorreo.innerHTML = "This field email are required";
+                return false;
+            } else if (!validarEmail(correo.value)) {
+                errorCorreo.innerHTML = "The syntaxis is not correct";
+                return false;
+            } else {
+                errorCorreo.innerHTML = "";
+            }
+
+            if (dni.value == "") {
+                errorDNI.innerHTML = "This field DNI are required";
+                return false;
+            } else {
+                errorDNI.innerHTML = "";
+            }
+            return true;
+        }
+        // var boton = document.querySelector("[type=\"button\"]");
+    </script>
+</body>
+
+</html>
