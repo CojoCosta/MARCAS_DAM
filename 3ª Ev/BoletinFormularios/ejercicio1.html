@@ -13,17 +13,26 @@
             align-items: center;
             justify-content: center;
         }
+        #button {
+            background-color: rgba(230, 86, 86, 0.973);
+        }
     </style>
     <script>
         function mostrar() {
             var info = document.getElementById("comentarios");
-            var opciones = document.getElementById("asunto");
+            var opciones = document.getElementById("asunto1");
             var opcion = opciones.options[opciones.selectedIndex].value;
             info.value = opcion;
         }
-        window.onload = function () {
-            var boton = document.querySelector("[type=\"button\"]")
-            boton.onclick = mostrar;
+        function validarFormulario(event) {
+            var nombre = document.getElementById("nombre").value.trim();
+            var telefono = document.getElementById("telefono").value.trim();
+            var asunto = document.getElementById("asunto1").value.trim();
+
+            if (nombre === "" || telefono === "" || asunto === "") {
+                alert("Todos los campos son obligatorios");
+                event.preventDefault();
+            }
         }
 
     </script>
@@ -39,8 +48,8 @@
             <input type="number" name="telefono" id="telefono" placeholder="Telefono"><br>
 
             <label for="asunto"><strong>Asunto: </strong></label><br>
-            <select name="asunto" id="asunto">
-                <option value="N m ada"></option>
+            <select name="asunto" id="asunto1" onchange="mostrar();">
+                <option value="Nada"></option>
                 <option value="Solicitar información">Solicitar información</option>
                 <option value="Poner una queja">Poner una queja</option>
                 <option value="Otros">Otros</option>
@@ -50,7 +59,7 @@
             <textarea name="comentarios" id="comentarios" cols="30" rows="10"
                 placeholder="Escriba aquí su mensaje"></textarea><br>
 
-            <input type="button" value="Enviar Consulta">
+            <input type="button" value="Enviar Consulta" id="button" onclick="validarFormulario();">
         </form>
     </div>
 </body>

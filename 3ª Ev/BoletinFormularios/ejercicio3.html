@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio3</title>
+    <style>
+        #calcular{
+            background-color: rgba(230, 86, 86, 0.973);
+        }
+    </style>
 </head>
 <body>
     <h3>Rellena el siguiente formulario para calcular el coste total del envío</h3>
@@ -40,7 +45,7 @@
             let envio = parseFloat(document.getElementById("metodo").value);
             
             let precioConIva = precio + (precio * iva / 100);
-            let precioTotal = ((precioConIva - descuento) * cantidad) + envio;
+            let precioTotal = (precioConIva * cantidad) + envio - descuento;
             
             document.getElementById("resultado").textContent = "El precio total del envío es: " + precioTotal.toFixed(2) + "€";
         });

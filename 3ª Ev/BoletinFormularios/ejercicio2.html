@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ejercicio 2</title>
+    <style>
+        button {
+            background-color: rgba(230, 86, 86, 0.973);
+        }
+    </style>
+
     <script>
         window.onload = function () {
             var boton = document.querySelector("[type=\"button\"]");
@@ -21,7 +27,7 @@
             info.innerHTML += "Teléfono: " + tlf + "<br>";
             var email = document.getElementsByName("email")[0].value;
             info.innerHTML += "Email: " + email + "<br>";
-            var  fecha = Date().toString();
+            var fecha = Date().toString();
             info.innerHTML += "Fecha: " + fecha
         }
     </script>
