@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="alumnos.dtd" type="application/xml-dtd"?>
+<alumnos>
+    <alumno codigo = "AB09">
+        <nombre></nombre>
+        <apellidos></apellidos>
+        <direccion></direccion>
+        <DNI></DNI>
+        <asignatura>
+            <nombre></nombre>
+            <codigo></codigo>
+            <horas></horas>
+        </asignatura>
+        <asignatura>
+            <nombre></nombre>
+            <codigo></codigo>
+            <horas></horas>
+        </asignatura>
+        <asignatura>
+            <nombre></nombre>
+            <codigo></codigo>
+            <horas></horas>
+        </asignatura>
+    </alumno>
+
+    <alumno codigo = "AB09">
+        <nombre></nombre>
+        <apellidos></apellidos>
+        <direccion></direccion>
+        <DNI></DNI>
+        <asignatura>
+            <nombre></nombre>
+            <codigo></codigo>
+            <horas></horas>
+        </asignatura>
+        <asignatura>
+            <nombre></nombre>
+            <codigo></codigo>
+            <horas></horas>
+        </asignatura>
+        <asignatura>
+            <nombre></nombre>
+            <codigo></codigo>
+            <horas></horas>
+        </asignatura>
+    </alumno>
+    
+</alumnos>
