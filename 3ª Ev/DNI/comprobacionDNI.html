@@ -58,7 +58,7 @@
         }
 
         input:valid {
-            color: green;
+            color: yellowgreen;
         }
 
         input:invalid {
@@ -95,69 +95,50 @@
         .buttons {
             margin-top: 20px;
         }
-
-        footer {
-            display: block;
-            width: 100%;
-            height: 30px;
-            background-color: lightblue;
-            color: white;
-            text-align: center;
-            justify-content: center;
-            padding: 15px 0;
-            bottom: 0;
-            margin-top: 30px;
-        }
-        
-        a {
-            color: whitesmoke;
-            text-decoration: none;
-            font-size: larger;
-        }
     </style>
 </head>
 
 <body>
 
     <header>
-        Formulario de Registro y Validación.
+        Formulario de validación del DNI.
     </header>
 
     <div class="container">
         <div class="form-section">
             <form action="#" method="post" enctype="multipart/form-data">
                 <div class="form-row">
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" id="nombre" minlength="4">
                 </div>
                 <span id="errornombre"></span><br>
 
                 <div class="form-row">
-                    <label for="apellidos">Apellidos</label>
+                    <label for="apellidos">Apellidos:</label>
                     <input type="text" name="apellidos" id="apellidos" minlength="8">
                 </div>
                 <span id="errorapellidos"></span><br>
 
                 <div class="form-row">
-                    <label for="edad">Edad</label>
+                    <label for="edad">Edad:</label>
                     <input type="number" name="edad" id="edad">
                 </div>
                 <span id="erroredad"></span><br>
 
                 <div class="form-row">
-                    <label for="correo">Email</label>
+                    <label for="correo">Email:</label>
                     <input type="email" name="correo" id="correo">
                 </div>
                 <span id="errorcorreo"></span><br>
 
                 <div class="form-row">
-                    <label for="dni">DNI</label>
+                    <label for="dni">DNI:</label>
                     <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Z]{1}">
                 </div>
                 <span id="errordni"></span><br>
 
                 <div class="form-row">
-                    <label for="foto">Foto</label>
+                    <label for="foto">Foto:</label>
                     <input type="file" name="foto" id="foto" accept="image/*" onchange="mostrarPreview(event)">
                 </div>
                 <span id="errorfoto"></span><br>
@@ -176,9 +157,6 @@
         </div>
     </div>
 
-    <footer>
-        Desarrollado por <a href="https://github.com/CojoCosta">Diego Costa</a>
-    </footer>
 
     <script>
         function validarCorreo(correo) {
