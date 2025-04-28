@@ -3,48 +3,53 @@
 
 <?xml-model href="alumnos.dtd" type="application/xml-dtd"?>
 <alumnos>
-    <alumno codigo = "AB09">
+    <alumno codigo="AB09">
         <nombre></nombre>
         <apellidos></apellidos>
-        <direccion numero = "50" piso = "3" puerta = "B">Torrecedeira</direccion>
+        <direccion numero="15" piso="3" puerta="B">Torrecedeira</direccion>
         <DNI></DNI>
-        <asignatura>
-            <nombre></nombre>
-            <codigo></codigo>
-            <horas></horas>
-        </asignatura>
-        <asignatura>
-            <nombre></nombre>
-            <codigo></codigo>
-            <horas></horas>
-        </asignatura>
-        <asignatura>
-            <nombre></nombre>
-            <codigo></codigo>
-            <horas></horas>
-        </asignatura>
-    </alumno>
-
-    <alumno codigo = "AB09">
-        <nombre></nombre>
-        <apellidos></apellidos>
-        <direccion></direccion>
-        <DNI></DNI>
-        <asignatura>
-            <nombre></nombre>
-            <codigo></codigo>
-            <horas></horas>
-        </asignatura>
-        <asignatura>
-            <nombre></nombre>
-            <codigo></codigo>
-            <horas></horas>
-        </asignatura>
-        <asignatura>
-            <nombre></nombre>
-            <codigo></codigo>
-            <horas></horas>
-        </asignatura>
+        <hombre />
+        <asignaturas>
+            <asignatura>
+                <nombre></nombre>
+                <codigo></codigo>
+                <horas></horas>
+            </asignatura>
+            <asignatura>
+                <nombre></nombre>
+                <codigo></codigo>
+                <horas></horas>
+            </asignatura>
+            <asignatura>
+                <nombre></nombre>
+                <codigo></codigo>
+                <horas></horas>
+            </asignatura>
+        </asignaturas>
     </alumno>
     
+    <alumno codigo="AB11">
+        <nombre></nombre>
+        <apellidos></apellidos>
+        <direccion numero = "22"></direccion>
+        <DNI></DNI>
+        <mujer />
+        <asignaturas>
+            <asignatura>
+                <nombre></nombre>
+                <codigo></codigo>
+                <horas></horas>
+            </asignatura>
+            <asignatura>
+                <nombre></nombre>
+                <codigo></codigo>
+                <horas></horas>
+            </asignatura>
+            <asignatura>
+                <nombre></nombre>
+                <codigo></codigo>
+                <horas></horas>
+            </asignatura>
+        </asignaturas>
+    </alumno>
 </alumnos>

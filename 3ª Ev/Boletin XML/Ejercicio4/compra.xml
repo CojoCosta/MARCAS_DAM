@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="compra.dtd" type="application/xml-dtd"?>
+
+<listacompra>
+    <venta>
+        <ventaacredito>
+            <fechafinpago></fechafinpago>
+            <cantidad></cantidad>
+        </ventaacredito>
+    </venta>
+    <venta>
+        <ventainmediata>
+            <cantidad></cantidad>
+            <divisa></divisa>
+        </ventainmediata>
+    </venta>
+</listacompra>

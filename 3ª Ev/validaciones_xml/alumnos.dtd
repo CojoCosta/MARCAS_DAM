@@ -1,1 +1,22 @@
-<!ELEMENT alumnos (alumno+)>
+<!ELEMENT alumnos (alumno+)> <!-- indicadores + , * , ?... -->
+
+<!ELEMENT alumno (nombre, apellidos, direccion?, DNI, (hombre | mujer), asignaturas)>
+<!--(opcon1 | opcion2) sin nada se elige solo uno // con ()+ se elige 1 o mas // ()* puedes no elegir o elegir varios -->
+<!ATTLIST alumno codigo ID #REQUIRED> <!--ATTLIST(atributo)ID -> REQUIRED es obligatorio // IMPLIED es opcional -->
+<!ELEMENT nombre (#PCDATA)> <!-- #PCDATA (conjunto de caracteres (STRING))  -->
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ATTLIST direccion numero (15|22) #REQUIRED> <!-- CDATA (guarda un atributo string y se puede repetir)-->
+<!ATTLIST direccion piso CDATA #IMPLIED>
+<!ATTLIST direccion puerta CDATA #IMPLIED>
+<!ELEMENT DNI (#PCDATA)>
+<!ELEMENT hombre EMPTY> <!-- Elemento OR de elegir una opcion -->
+<!ELEMENT mujer EMPTY>
+<!ELEMENT sexo (#PCDATA)>
+
+
+<!ELEMENT asignaturas (asignatura+)>
+
+<!ELEMENT asignatura (nombre, codigo, horas)>
+<!ELEMENT codigo (#PCDATA)>
+<!ELEMENT horas (#PCDATA)>

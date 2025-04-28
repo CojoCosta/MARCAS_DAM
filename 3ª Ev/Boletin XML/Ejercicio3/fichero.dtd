@@ -1,0 +1,18 @@
+<!ELEMENT productos (producto+)>
+
+<!ELEMENT producto (raton | teclado | monitor)>
+
+<!ELEMENT raton (#PCDATA)>
+<!ATTLIST raton codigo ID #REQUIRED>
+<!ATTLIST raton nombre CDATA #IMPLIED>
+<!ATTLIST raton descripcion CDATA #IMPLIED>
+
+<!ELEMENT teclado (#PCDATA)>
+<!ATTLIST teclado codigo ID #REQUIRED>
+<!ATTLIST teclado nombre CDATA #IMPLIED>
+<!ATTLIST teclado descripcion CDATA #IMPLIED>
+
+<!ELEMENT monitor (#PCDATA)>
+<!ATTLIST monitor codigo ID #REQUIRED>
+<!ATTLIST monitor nombre CDATA #IMPLIED>
+<!ATTLIST monitor descripcion CDATA #IMPLIED>

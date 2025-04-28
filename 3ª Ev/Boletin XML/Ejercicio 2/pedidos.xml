@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="pedidos.dtd" type="application/xml-dtd"?>
+<lista>
+    <pedidos>
+        <numeroSerie></numeroSerie>
+        <cantidad></cantidad>
+        <peso></peso>
+    </pedidos>
+</lista>

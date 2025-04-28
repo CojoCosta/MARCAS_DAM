@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="fichero.dtd" type="application/xml-dtd"?>
+
+<productos>
+    <producto>
+        <raton codigo = "A1" nombre = "" descripcion =""></raton>
+    </producto>
+    <producto>
+        <teclado codigo = "A2" nombre = "" descripcion =""></teclado>
+    </producto>
+    <producto>
+        <monitor codigo = "A3" nombre = "" descripcion =""></monitor>
+    </producto>
+</productos>
