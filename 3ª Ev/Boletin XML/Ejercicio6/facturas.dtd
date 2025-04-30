@@ -3,7 +3,7 @@
 <!ELEMENT listafacturas (factura*)>
 
 <!ELEMENT factura (emisor, pagador, importe)>
-<!ATTLIST factura fecha ID #IMPLIED>
+<!ATTLIST factura fecha CDATA #IMPLIED>
 
 <!ELEMENT emisor (nombre, volumenVentas?)>
 <!ATTLIST emisor cif ID #REQUIRED>
