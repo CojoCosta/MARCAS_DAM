@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="facturas.dtd" type="application/xml-dtd"?>
+
+<ficheros>
+    <listafacturas>
+        <factura fecha = "ABRIL-30-2025">
+            <emisor cif = "A1">
+                <nombre></nombre>
+                <volumenVentas></volumenVentas>
+            </emisor>
+            <pagador cif = "A2">
+                <nombre></nombre>
+                <volumenVentas></volumenVentas>
+            </pagador>
+            <importe></importe>
+        </factura>
+    </listafacturas>
+</ficheros>
