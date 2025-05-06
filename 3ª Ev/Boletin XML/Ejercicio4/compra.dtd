@@ -7,5 +7,4 @@
 <!ELEMENT cantidad (#PCDATA)>
 
 <!ELEMENT ventainmediata (cantidad, divisa)>
-<!ELEMENT cantidad (#PCDATA)>
 <!ELEMENT divisa (#PCDATA)>
