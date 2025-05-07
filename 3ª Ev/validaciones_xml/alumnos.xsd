@@ -3,7 +3,7 @@
     <xs:element name="alumnos">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name = "alumno" type = "tipo_alumno">
+                <xs:element name = "alumno" type = "tipo_alumno" minOccurs="1" maxOccurs="unbounded">
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
