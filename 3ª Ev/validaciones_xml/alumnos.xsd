@@ -1,19 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="alumnos">
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name = "alumnos">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name = "alumno" type = "tipo_alumno" minOccurs="1" maxOccurs="unbounded">
+                <xs:element name = "alumno" type = "tipo_alumno" minOccurs="1" maxOccurs = "unbounded">
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="tipo_alumno">
+
+    <xs:complexType name = "tipo_alumno">
         <xs:sequence>
             <xs:element name = "nombre" type = "xs:string"></xs:element>
             <xs:element name = "apellidos" type = "xs:string"></xs:element>
             <xs:element name = "direccion" type = "tipo_direccion"></xs:element>
-            <xs:element name = "DNI" type="tipo_dni"></xs:element>
+            <xs:element name = "DNI" type = "tipo_dni"></xs:element>
             <xs:choice>
                 <xs:element name = "hombre">
                     <xs:complexType/>
@@ -24,5 +26,54 @@
             </xs:choice>
             <xs:element name = "asignaturas" type = "tipo_asignaturas"></xs:element>
         </xs:sequence>
+        <xs:attribute name = "codigo" type = "tipo_codigo"></xs:attribute>
     </xs:complexType>
+
+    <xs:complexType name = "tipo_direccion">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name = "numero" type = "xs:positiveInteger" use = "required"></xs:attribute>
+                <xs:attribute name = "puerta" type = "tipo_puerta"></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name = "tipo_dni">
+        <xs:restriction base = "xs:string">
+            <xs:pattern value = "\d{8}[A-Z]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name = "tipo_asignaturas">
+        <xs:sequence>
+            <xs:element name = "asignatura" minOccurs = "1" maxOccurs = "unbounded" type = "tipo_asignatura"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name = "tipo_codigo">
+        <xs:restriction base = "xs:string">
+            <xs:pattern value = "[A-Z]{2}-\d{2}"></xs:pattern> <!--\d o [0-9] para numeros-->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name = "tipo_puerta">
+        <xs:restriction base = "xs:string">
+            <xs:pattern value = "[A-Z]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name = "tipo_asignatura">
+        <xs:sequence>
+            <xs:element name = "nombre" type = "xs:string"></xs:element>
+            <xs:element name = "codigo" type = "tipo_codigo"></xs:element>
+            <xs:element name = "horas" type = "tipo_hora"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipo_hora">
+        <xs:restriction base = "xs:integer">
+            <xs:pattern value="\d{1}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
 </xs:schema>

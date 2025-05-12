@@ -2,11 +2,11 @@
 <?xml-model href="alumnos.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?> 
 
 <alumnos>
-    <alumno codigo="AB09">
+    <alumno codigo="AB-09">
         <nombre></nombre>
         <apellidos></apellidos>
         <direccion numero="15" piso="3" puerta="B">Torrecedeira</direccion>
-        <DNI></DNI>
+        <DNI>39458229G</DNI>
         <hombre />
         <asignaturas>
             <asignatura>
@@ -27,7 +27,7 @@
         </asignaturas>
     </alumno>
     
-    <alumno codigo="AB11">
+    <alumno codigo="AB-11">
         <nombre></nombre>
         <apellidos></apellidos>
         <direccion numero = "22"></direccion>
