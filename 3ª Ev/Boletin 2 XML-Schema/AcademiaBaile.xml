@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="AcademiaBaile.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<AcademiaBaile>
+    <baile>
+        <nombre></nombre>
+        <profesor></profesor>
+        <numeroAula></numeroAula>
+        <numeroPlazas></numeroPlazas>
+    </baile>
+
+    <alumnos>
+        <DNI></DNI>
+        <nombre></nombre>
+        <direccion></direccion>
+        <telefono></telefono>
+        <fechaNacimiento></fechaNacimiento>
+        <hombre />
+    </alumnos>
+
+    <clase>
+        <nombre></nombre>
+        <diasSemana></diasSemana>
+        <horaInicio></horaInicio>
+        <horaFin></horaFin>
+        <DNI></DNI>
+    </clase>
+</AcademiaBaile>

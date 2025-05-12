@@ -5,24 +5,24 @@
     <alumno codigo="AB-09">
         <nombre></nombre>
         <apellidos></apellidos>
-        <direccion numero="15" piso="3" puerta="B">Torrecedeira</direccion>
+        <direccion numero="15" puerta="B">Torrecedeira</direccion>
         <DNI>39458229G</DNI>
         <hombre />
         <asignaturas>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>AC-23</codigo>
+                <horas>3</horas>
             </asignatura>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>AA-23</codigo>
+                <horas>200</horas>
             </asignatura>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>AB-23</codigo>
+                <horas>2</horas>
             </asignatura>
         </asignaturas>
     </alumno>
@@ -31,23 +31,23 @@
         <nombre></nombre>
         <apellidos></apellidos>
         <direccion numero = "22"></direccion>
-        <DNI></DNI>
+        <DNI>56476971H</DNI>
         <mujer />
         <asignaturas>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>BA-23</codigo>
+                <horas>4</horas>
             </asignatura>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>BB-23</codigo>
+                <horas>2</horas>
             </asignatura>
             <asignatura>
                 <nombre></nombre>
-                <codigo></codigo>
-                <horas></horas>
+                <codigo>BC-23</codigo>
+                <horas>3</horas>
             </asignatura>
         </asignaturas>
     </alumno>
