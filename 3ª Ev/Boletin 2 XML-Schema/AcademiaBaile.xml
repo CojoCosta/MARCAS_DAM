@@ -6,24 +6,26 @@
     <baile>
         <nombre></nombre>
         <profesor></profesor>
-        <numeroAula></numeroAula>
-        <numeroPlazas></numeroPlazas>
+        <numeroAula>5</numeroAula>
+        <numeroPlazas>24</numeroPlazas>
     </baile>
 
     <alumnos>
-        <DNI></DNI>
-        <nombre></nombre>
-        <direccion></direccion>
-        <telefono></telefono>
-        <fechaNacimiento></fechaNacimiento>
-        <hombre />
+        <alumno>
+            <DNI>12345678-G</DNI>
+            <nombre></nombre>
+            <direccion></direccion>
+            <telefono>123456789</telefono>
+            <fechaNacimiento>2000-12-18</fechaNacimiento>
+            <hombre />
+        </alumno>
     </alumnos>
 
     <clase>
         <nombre></nombre>
-        <diasSemana></diasSemana>
-        <horaInicio></horaInicio>
-        <horaFin></horaFin>
+        <diasSemana>7</diasSemana>
+        <horaInicio>11:30:00</horaInicio>
+        <horaFin>12:30:00</horaFin>
         <DNI></DNI>
     </clase>
 </AcademiaBaile>

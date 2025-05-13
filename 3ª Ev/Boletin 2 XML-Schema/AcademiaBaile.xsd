@@ -1,9 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name = "AcademiaBaile">
-        
+    <xs:element name="AcademiaBaile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="baile" type="tipo_baile" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+                <xs:element name="alumnos" type="tipo_alumnos" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+                <xs:element name="clase" type="tipo_clase" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
     </xs:element>
 
+    <xs:complexType name="tipo_baile">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"></xs:element>
+            <xs:element name="profesor" type="xs:string"></xs:element>
+            <xs:element name="numeroAula" type="tipo_numAula"></xs:element>
+            <xs:element name="numeroPlazas" type="tipo_numPlazas"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipo_numAula">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:pattern value="[0-9]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipo_numPlazas">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:maxExclusive value="25"></xs:maxExclusive>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipo_alumnos">
+        <xs:sequence>
+            <xs:element name="alumno" type="tipo_alumno" minOccurs="1" maxOccurs="unbounded">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipo_alumno">
+        <xs:sequence>
+            <xs:element name="DNI" type="tipo_dni"></xs:element>
+            <xs:element name="nombre" type="xs:string"></xs:element>
+            <xs:element name="direccion" type="xs:string"></xs:element>
+            <xs:element name="telefono" type="tipo_tlf" minOccurs="1"></xs:element>
+            <xs:element name="fechaNacimiento" type="xs:date"></xs:element>
+            <xs:choice>
+                <xs:element name = "hombre">
+                    <xs:complexType/>
+                </xs:element>
+                <xs:element name = "mujer">
+                    <xs:complexType/>
+                </xs:element>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipo_dni">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{8}-[A-Z]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipo_tlf">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:pattern value="\d{9}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:complexType name="tipo_clase">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"></xs:element>
+            <xs:element name="diasSemana" type="tipo_diasSemana"></xs:element>
+            <xs:element name="horaInicio" type="xs:time"></xs:element>
+            <xs:element name="horaFin" type="xs:time"></xs:element>
+            <xs:element name="DNI" type="tipo_dni"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipo_diasSemana">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:maxInclusive value="7"></xs:maxInclusive>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>
