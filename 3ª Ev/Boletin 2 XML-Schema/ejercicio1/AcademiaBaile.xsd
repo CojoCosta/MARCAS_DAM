@@ -7,7 +7,6 @@
                 <xs:element name="baile" type="tipo_baile" minOccurs="1" maxOccurs="unbounded"> </xs:element>
                 <xs:element name="alumnos" type="tipo_alumnos" minOccurs="1" maxOccurs="unbounded"> </xs:element>
                 <xs:element name="clase" type="tipo_clase" minOccurs="1" maxOccurs="unbounded"> </xs:element>
-
             </xs:sequence>
         </xs:complexType>
     </xs:element>

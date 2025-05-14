@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="Csalud.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<centroSalud>
+    <medicos>
+        <medico>            
+            <numId>1564</numId>
+            <nombre></nombre>
+            <especialidad></especialidad>
+            <salaCitas></salaCitas>
+        </medico>
+    </medicos>
+
+    <pacientes>
+        <paciente>
+            <DNI></DNI>
+            <nombre></nombre>
+            <direccion></direccion>
+            <telefono></telefono>
+            <numSegSocial></numSegSocial>
+            <fechaNacimiento></fechaNacimiento>
+            <hombre />
+        </paciente>
+    </pacientes>
+
+    <citas>
+        <cita>
+            <fecha></fecha>
+            <IdMedico></IdMedico>
+            <DNIPac></DNIPac>
+            <tratamiento></tratamiento>
+        </cita>
+    </citas>
+</centroSalud>

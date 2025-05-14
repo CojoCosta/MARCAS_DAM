@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="centroSalud">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="medicos" type="tipo_medicos" maxOccurs="1"></xs:element>
+                <xs:element name="pacientes" type="tipo_pacientes" maxOccurs="1"></xs:element>
+                <xs:element name="citas" type="tipo_citas" maxOccurs="1"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="tipo_medicos">
+        <xs:sequence>
+            <xs:element name="medico" type="tipo_medico" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipo_medico">
+        <xs:sequence>
+            <xs:element name="numId" type="tipo_id"></xs:element>
+            <xs:element name="nombre" type="xs:string"></xs:element>
+            <xs:element name="especialidad" type="xs:string"></xs:element>
+            <xs:element name="salaCitas" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipo_id">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:pattern value="\d{5}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipo_pacientes">
+        <xs:sequence>
+            <xs:element name="paciente" type="tipo_paciente"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipo_paciente">
+        <xs:sequence>
+            <xs:element name="DNI" type="tipo_dni"></xs:element>
+            <xs:element name="nombre" type="xs:string"></xs:element>
+            <xs:element name="direccion" type="xs:string"></xs:element>
+            <xs:element name="telefono" type="tipo_tlf" minOccurs="1" maxOccurs="unbounded"></xs:element>
+            <xs:element name="numSegSocial" type="xs:positiveInteger"></xs:element>
+            <xs:element name="fechaNacimiento" type="xs:date"></xs:element>
+            <xs:choice>
+                <xs:element name="hombre">
+                    <xs:complexType />
+                </xs:element>
+                <xs:element name="mujer">
+                    <xs:complexType />
+                </xs:element>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    
+</xs:schema>
