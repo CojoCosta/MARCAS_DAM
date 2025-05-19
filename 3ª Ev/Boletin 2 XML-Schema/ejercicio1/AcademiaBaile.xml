@@ -3,12 +3,14 @@
 <?xml-model href="AcademiaBaile.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 
 <AcademiaBaile>
-    <baile>
-        <nombre></nombre>
-        <profesor></profesor>
-        <numeroAula>5</numeroAula>
-        <numeroPlazas>24</numeroPlazas>
-    </baile>
+    <bailes>
+        <baile>
+            <nombre></nombre>
+            <profesor></profesor>
+            <numeroAula>5</numeroAula>
+            <numeroPlazas>24</numeroPlazas>
+        </baile>
+    </bailes>
 
     <alumnos>
         <alumno>

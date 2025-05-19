@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="curso.dtd" type="application/xml-dtd"?>
+
+<listacursos>
+    <curso>
+        <alumnos>
+            <alumno>
+                <DNI></DNI>
+                <nombre></nombre>
+                <apellido></apellido>
+                <apellido2></apellido2>
+                <asignaturas>
+                    <asignatura codigo = "A22">
+                        <nombre></nombre>
+                        <profesor>
+                            <NRP></NRP>
+                            <nombre></nombre>
+                            <apellido></apellido>
+                            <apellido2></apellido2>
+                        </profesor>
+                    </asignatura>
+                </asignaturas>
+            </alumno>
+        </alumnos>
+    </curso>
+</listacursos>

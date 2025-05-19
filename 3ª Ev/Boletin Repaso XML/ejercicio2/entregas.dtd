@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT entregas (lote+)>
+<!ELEMENT lote (pales+)>
+<!ELEMENT pales (NCajas, contenido, peso, manipulacion)>
+
+<!ELEMENT NCajas (#PCDATA)>
+
+<!ELEMENT contenido (nombre, procedencia*, NSerie, pesoIndividual, unidadPeso)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT procedencia (#PCDATA)>
+<!ELEMENT NSerie (#PCDATA)>
+<!ELEMENT pesoIndividual (#PCDATA)>
+<!ELEMENT unidadPeso (#PCDATA)>
+
+<!ELEMENT peso (#PCDATA)>
+<!ELEMENT manipulacion (#PCDATA)>

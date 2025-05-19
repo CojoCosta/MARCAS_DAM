@@ -57,5 +57,31 @@
         </xs:sequence>
     </xs:complexType>
 
-    
+    <xs:simpleType name="tipo_dni">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{8}-[A-Z]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipo_tlf">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:pattern value="\d{9}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipo_citas">
+        <xs:sequence>
+            <xs:element name="cita" type="tipo_cita"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipo_cita">
+        <xs:sequence>
+            <xs:element name="fecha" type="xs:date"></xs:element>
+            <xs:element name="IdMedico" type="tipo_id"></xs:element>
+            <xs:element name="DNIPac" type="tipo_dni"></xs:element>
+            <xs:element name="tratamiento" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
 </xs:schema>

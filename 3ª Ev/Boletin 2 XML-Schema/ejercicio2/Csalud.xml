@@ -5,7 +5,7 @@
 <centroSalud>
     <medicos>
         <medico>            
-            <numId>1564</numId>
+            <numId>12345</numId>
             <nombre></nombre>
             <especialidad></especialidad>
             <salaCitas></salaCitas>
@@ -14,21 +14,21 @@
 
     <pacientes>
         <paciente>
-            <DNI></DNI>
-            <nombre></nombre>
-            <direccion></direccion>
-            <telefono></telefono>
-            <numSegSocial></numSegSocial>
-            <fechaNacimiento></fechaNacimiento>
+            <DNI>12354678-G</DNI>
+            <nombre>diego</nombre>
+            <direccion>vivas</direccion>
+            <telefono>123456789</telefono>
+            <numSegSocial>123</numSegSocial>
+            <fechaNacimiento>2000-08-18</fechaNacimiento>
             <hombre />
         </paciente>
     </pacientes>
 
     <citas>
         <cita>
-            <fecha></fecha>
-            <IdMedico></IdMedico>
-            <DNIPac></DNIPac>
+            <fecha>2000-12-12</fecha>
+            <IdMedico>12345</IdMedico>
+            <DNIPac>12345678-G</DNIPac>
             <tratamiento></tratamiento>
         </cita>
     </citas>
