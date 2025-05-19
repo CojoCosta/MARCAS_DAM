@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="listaproductos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="articulo" type="tipo_articulo" ></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="tipo_articulo">
+        <xs:sequence>
+            <xs:element name="codigo" type="tipo_codigo"></xs:element>
+            <xs:element name="descripcion"  type="tipo_descripcion"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="tipo_descripcion">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="autor" type="xs:string" use="required"></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

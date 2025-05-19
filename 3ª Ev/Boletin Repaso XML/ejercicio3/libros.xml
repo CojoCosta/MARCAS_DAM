@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="libros.dtd" type="application/xml-dtd"?>
+
+<operaciones>
+    <operacion>
+        <venta>
+            <titulosVendidos>
+                <titulo></titulo>
+                <cantidad></cantidad>
+                <entregados>
+                    </si>
+                </entregados>
+                <moneda tipo="a1"></moneda>
+            </titulosVendidos>
+        </venta>
+    </operacion>
+
+    <operacion>
+        <compra>
+            <titulosComprados>
+                <titulo></titulo>
+                <provedor></provedor>
+                <fechaCompra>
+                    <dia></dia>
+                    <mes></mes>
+                    <año></año>
+                </fechaCompra>
+            </titulosComprados>
+        </compra>
+    </operacion>
+
+    <operacion>
+        <venta>
+            <titulosVendidos>
+                <titulo></titulo>
+                <cantidad></cantidad>
+                <entregados>
+                    </no>
+                </entregados>
+                <moneda tipo="a2"></moneda>
+            </titulosVendidos>
+        </venta>
+        <compra>
+            <titulosComprados>
+                <titulo></titulo>
+                <provedor></provedor>
+                <fechaCompra>
+                    <dia></dia>
+                    <mes></mes>
+                    <año></año>
+                </fechaCompra>
+            </titulosComprados>
+        </compra>
+    </operacion>
+</operaciones>

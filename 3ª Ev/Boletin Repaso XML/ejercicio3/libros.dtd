@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT operaciones (operacion+)>
+<!ELEMENT operacion (venta?, compra?)*>
+
+<!ELEMENT venta (titulosVendidos+)>
+<!ELEMENT titulosVendidos (titulo, cantidad, entregados, moneda)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT cantidad (#PCDATA)>
+<!ELEMENT entregados (si | no)>
+<!ELEMENT si EMPTY>
+<!ELEMENT no EMPTY>
+<!ELEMENT moneda (#PCDATA)>
+<!ATTLIST moneda tipo ID #REQUIRED>
+
+<!ELEMENT compra (titulosComprados)>
+<!ELEMENT titulosComprados (titulo, provedor, fechaCompra)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT provedor (#PCDATA)>
+<!ELEMENT fechaCompra (dia, mes, año)>
+<!ELEMENT dia (#PCDATA)>
+<!ELEMENT mes (#PCDATA)>
+<!ELEMENT año (#PCDATA)>

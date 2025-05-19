@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="productos.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<listaproductos>
+    <articulo>
+        <!--Estructura
+        2 letras,2 cifras-->
+        <codigo>CD12</codigo>
+        <!--Descripcion
+        es optativo y su atributo autor también-->
+        <descripcion autor="Pepe">Monitor</descripcion>
+    </articulo>
+    <articulo>
+        <codigo>CA12</codigo>
+    </articulo>
+    <articulo>
+        <codigo>AA99</codigo>
+        <descripcion>Teclado</descripcion>
+    </articulo>
+</listaproductos>
