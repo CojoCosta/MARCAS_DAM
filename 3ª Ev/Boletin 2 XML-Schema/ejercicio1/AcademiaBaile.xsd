@@ -4,13 +4,17 @@
     <xs:element name="AcademiaBaile">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="baile" type="tipo_baile" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+                <xs:element name="bailes" type="tipo_bailes" minOccurs="1" maxOccurs="unbounded"> </xs:element>
                 <xs:element name="alumnos" type="tipo_alumnos" minOccurs="1" maxOccurs="unbounded"> </xs:element>
-                <xs:element name="clase" type="tipo_clase" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+                <xs:element name="clases" type="tipo_clases" minOccurs="1" maxOccurs="unbounded"> </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
+    <xs:complexType name="tipo_bailes">
+        <xs:sequence>
+            <xs:element name="baile" type="tipo_baile"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
     <xs:complexType name="tipo_baile">
         <xs:sequence>
             <xs:element name="nombre" type="xs:string"></xs:element>
@@ -38,7 +42,7 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-
+    
     <xs:complexType name="tipo_alumno">
         <xs:sequence>
             <xs:element name="DNI" type="tipo_dni"></xs:element>
@@ -56,20 +60,26 @@
             </xs:choice>
         </xs:sequence>
     </xs:complexType>
-
+    
     <xs:simpleType name="tipo_dni">
         <xs:restriction base="xs:string">
             <xs:pattern value="\d{8}-[A-Z]"></xs:pattern>
         </xs:restriction>
     </xs:simpleType>
-
+    
     <xs:simpleType name="tipo_tlf">
         <xs:restriction base="xs:positiveInteger">
             <xs:pattern value="\d{9}"></xs:pattern>
         </xs:restriction>
     </xs:simpleType>
-
-
+    
+    <xs:complexType name="tipo_clases">
+        <xs:sequence>
+            <xs:element name="clase" type="tipo_clase" minOccurs="1" maxOccurs="unbounded">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
     <xs:complexType name="tipo_clase">
         <xs:sequence>
             <xs:element name="nombre" type="xs:string"></xs:element>
