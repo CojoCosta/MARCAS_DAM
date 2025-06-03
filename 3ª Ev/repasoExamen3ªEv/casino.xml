@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="casino.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<apuesta numero = "">
+    <tipoJuego>
+        <ruleta></ruleta>
+        <blackjack></blackjack>
+        <tragaperras></tragaperras>
+    </tipoJuego>
+    <premio></premio>
+    <importe></importe>
+    <fecha></fecha>
+</apuesta>
